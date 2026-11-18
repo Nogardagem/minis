@@ -52,7 +52,7 @@ let letters = [];
 
 
 async function getWords() {
-    let response = await fetch('../dictionary.txt');
+    let response = await fetch('./dictionary.txt');
     let text = await response.text();
 
     
