@@ -1,0 +1,42 @@
+* {
+    font-family: sans-serif;
+}
+
+#board {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    
+    
+    width: 80vh;
+    height: 80vh;
+    container-type: inline-size;
+}
+
+.tile {
+    -webkit-user-select: none;
+    user-select: none;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 75%;
+    height: 75%;
+
+    border-radius: 20%;
+    filter: drop-shadow(0.2em 0.2em 1px black);
+
+    background-color: gray;
+
+    font-size: clamp(1em, 10cqi, 5em);
+    white-space: nowrap;
+
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.tile.active {
+    filter: drop-shadow(0.1em 0.1em 1px black);
+    background-color: green;
+}
