@@ -52,7 +52,7 @@ let letters = [];
 
 
 async function getWords() {
-    let response = await fetch('./dictionary.txt');
+    let response = await fetch('../../dictionary.txt');
     let text = await response.text();
 
     
@@ -77,7 +77,7 @@ function setup() {
 
     for (let i = 0; i < width*height; i++) {
         let tile = document.createElement('div');
-        tile.innerText = letters[Math.floor(Math.random() * letters.length)].toUpperCase();
+        tile.innerHTML = `<p>${letters[Math.floor(Math.random() * letters.length)].toUpperCase()}</p>`;
         tile.className = 'tile';
         
 
@@ -137,7 +137,7 @@ function submitWord() {
         btn.classList.remove('active');
     });
 
-    let word = selected.map(v => v.innerText).join('');
+    let word = selected.map(v => v.querySelector('p').innerText).join('');
     if (words.includes(word)) {
         if (!(played.includes(word)))  {
             played.push(word);
